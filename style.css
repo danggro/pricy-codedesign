@@ -1,6 +1,6 @@
 :root {
   --dark: #160e4b;
-  --primary: #7c67fe;
+  --primary: #00a3ff;
 }
 
 /* * {
@@ -9,19 +9,13 @@
 
 html {
   font-family: "DM Sans", sans-serif;
+  position: relative;
 }
 
 body {
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    #5b41fb 0deg,
-    #4456f8 176.25deg,
-    #53acff 260.62deg,
-    #573dfb 360deg
-  );
-  position: relative;
+  background: linear-gradient(180deg, #daf2ff 0%, #b8e3fc 100%);
   padding-inline: 150px;
-  color: white;
+  color: black;
 }
 
 .blurred {
@@ -44,9 +38,11 @@ body {
 }
 
 .navbar .LogoNav {
-  font-style: italic;
   font-size: 18px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .navbar .NavLink {
@@ -55,13 +51,13 @@ body {
 }
 
 .navbar .NavLink .LinkNav {
-  font-size: 500;
+  font-weight: 500;
   opacity: 80%;
-  color: white;
+  color: black;
 }
 
 .navbar .NavLink .active {
-  font-size: 700;
+  font-weight: 700;
   opacity: 100%;
 }
 
@@ -71,31 +67,39 @@ body {
 }
 
 .navbar .btn-nav {
-  padding-inline: 18px;
-  padding-block: 10px;
+  padding-inline: 30px;
+  padding-block: 15px;
   font-weight: 700;
-  border-radius: 6px;
-  background-color: #160e4b;
+  border-radius: 30px;
+  background-color: black;
   cursor: pointer;
-  border: 1px solid #160e4b;
+  border: 1px solid black;
+  color: white;
 }
 
 .navbar .btn-nav:hover {
   background-color: transparent;
-  color: #160e4b;
+  color: black;
 }
 
 .title {
   text-align: center;
-  width: 55%;
+  width: 50%;
   margin: auto;
   padding-top: 105px;
 }
 
 .title h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 21px;
+  line-height: 46.87px;
+}
+
+.title p {
+  line-height: 28px;
+  color: #000;
+  opacity: 0.6;
 }
 
 main {
@@ -106,56 +110,28 @@ main {
   margin-bottom: 117px;
 }
 
-main .CardMain:first-child {
-  border-radius: 10px 0 10px 10px;
-}
-main .CardMain:last-child {
-  border-radius: 0px 10px 10px 10px;
-}
-
 .CardMain {
   width: calc(1 / 3 * 100%);
   padding: 30px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   height: fit-content;
   position: relative;
 }
 
-.CardMain .recommended {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -28px;
-  border-radius: 10px 10px 0 0;
-  background-color: #160e4b;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  line-height: 22px;
-  padding-block: 3px;
-}
-
 .CardMain .titleCard {
-  color: var(--dark);
   font-weight: 700;
-}
-
-.CardMain .month {
-  font-size: 14px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.6);
-  margin-left: 4px;
+  font-size: 18px;
+  color: #000;
 }
 
 .CardMain h4 {
-  color: var(--dark);
   font-weight: 700;
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #000;
 }
 
 .CardMain .descCard {
@@ -173,7 +149,6 @@ main .CardMain:last-child {
   border-radius: 6px;
   text-align: center;
   line-height: 22px;
-  margin-block: 30px;
   border: 1px solid var(--primary);
   cursor: pointer;
 }
@@ -184,7 +159,7 @@ main .CardMain:last-child {
 }
 
 .CardMain ul {
-  margin-top: 10px;
+  margin-top: 20px;
   row-gap: 15px;
   display: flex;
   flex-direction: column;
@@ -195,4 +170,37 @@ main .CardMain:last-child {
   gap: 10px;
   align-items: center;
   font-weight: 500;
+}
+
+.CardMain .additional {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  line-height: 22px;
+}
+
+.CardMain .additional p:last-child {
+  color: #000;
+}
+
+main .BlackCardMain {
+  background-color: #041823;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+main .BlackCardMain .titleCard,
+main .BlackCardMain h4,
+main .BlackCardMain .additional p:last-child {
+  color: #fff;
+}
+
+.white-rec {
+  height: 341px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: -1;
 }
